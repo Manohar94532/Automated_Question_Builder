@@ -1,0 +1,8 @@
+Technologies Used
+Frontend: Streamlit
+Backend: Python, MySQL
+Natural Language Processing (NLP): NLTK, Google Translator API
+Machine Learning: Scikit-learn
+Database: MySQL
+APIs: Google Generative AI API
+Libraries: PyPDF2, docx, Werkzeug, Pandas, Matplotlib, Seaborn, FPDF, pptx
