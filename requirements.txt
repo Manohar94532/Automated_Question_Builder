@@ -12,3 +12,4 @@ fpdf
 python-pptx  
 google-cloud-aiplatform
 streamlit
+google-generativeai
