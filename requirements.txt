@@ -1,0 +1,13 @@
+PyPDF2  
+python-docx  
+mysql-connector-python  
+python-dotenv  
+Werkzeug  
+scikit-learn  
+nltk  
+matplotlib  
+seaborn  
+googletrans==4.0.0-rc1  
+fpdf  
+python-pptx  
+google-cloud-aiplatform
