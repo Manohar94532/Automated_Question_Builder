@@ -417,9 +417,9 @@ def create_connection():
     try:
         connection = mysql.connector.connect(
             host="localhost",
-            user="root",
-            password="manohar9452",
-            database="QB"
+            user=#your usernname,
+            password=#your Password,
+            database=#database
         )
         ensure_table_exists(connection)
         return connection
