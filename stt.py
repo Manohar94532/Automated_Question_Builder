@@ -25,7 +25,7 @@ from mpl_toolkits.mplot3d import Axes3D
 import seaborn as sns  
 import googletrans
 import numpy as np 
-import io
+import io 
 import datetime
 from datetime import datetime, timedelta
 from fpdf import FPDF  
