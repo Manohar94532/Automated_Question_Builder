@@ -388,7 +388,7 @@ def trainer_dashboard():
 nltk.download('vader_lexicon')
 
 load_dotenv()
-os.environ["GOOGLE_API_KEY"] = "AIzaSyAZ11Tinh63Rs1F0yWniCvNG33Q00xag1o"
+os.environ["GOOGLE_API_KEY"] = "AIzaSyAFqi_27kxXnm9DEQBt4iEXDBLgTOjvjJE"
 def save_question_bank(technology, topics, questions, difficulty, correct_answers):  
    connection = create_connection()  
    if connection is None:  
@@ -417,9 +417,9 @@ def create_connection():
     try:
         connection = mysql.connector.connect(
             host="localhost",
-            user=#your usernname,
-            password=#your Password,
-            database=#database
+            user="root",
+            password="manohar9452",
+            database="QB"
         )
         ensure_table_exists(connection)
         return connection
