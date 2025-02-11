@@ -415,12 +415,13 @@ def save_question_bank(technology, topics, questions, difficulty, correct_answer
 # MySQL connection
 def create_connection():
     try:
-        connection = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="manohar9452",
-            database="QB"
-        )
+       connection = mysql.connector.connect(
+        host="sql.freedb.tech",  # This is usually the FreeSQLDatabase host
+        port=3306,  # Default MySQL port
+        user="root",
+        password="manohar9452",
+        database="QB"
+)
         ensure_table_exists(connection)
         return connection
     except Error as e:
