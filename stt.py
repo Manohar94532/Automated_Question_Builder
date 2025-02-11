@@ -414,19 +414,19 @@ def save_question_bank(technology, topics, questions, difficulty, correct_answer
         connection.close()
 # MySQL connection
 def create_connection():
-    try:
-        connection = mysql.connector.connect(
-            host="sql12.freesqldatabase.com",
-            port=3306,
-            user="sql12762140",
-            password="DG7ztRUcwD",
-            database="sql12762140"
-        )
-        ensure_table_exists(connection)
-        return connection
-    except Error as e:
-        st.error(f"Error connecting to MySQL: {e}")
-        return None
+   try:
+       connection = mysql.connector.connect(
+           host="sql12.freesqldatabase.com",
+           port=3306, 
+           user="sql12762140",
+           password="DG7ztRUcwD",
+           database="sql12762140"
+       )
+       ensure_table_exists(connection)
+       return connection
+   except Error as e:
+       st.error(f"Error connecting to MySQL: {e}")
+       return None
 
 genai.configure(api_key=os.getenv('GOOGLE_API_KEY'))
 model = genai.GenerativeModel('gemini-pro')
@@ -505,33 +505,30 @@ def generate_questions(text, num_questions=5, question_type="multiple-choice"):
     return questions[:num_questions], options[:num_questions], correct_answers[:num_questions]
 
 def ensure_table_exists(connection):
-    try:
-        cursor = connection.cursor()
-
-        # Check if the table exists
-        cursor.execute("SHOW TABLES LIKE 'generated_question_files'")
-        result = cursor.fetchone()
-
-        if not result:
-            # Table doesn't exist, so create it
-            cursor.execute("""
-            CREATE TABLE generated_question_files (
-                id INT AUTO_INCREMENT PRIMARY KEY,
-                technology VARCHAR(255) NOT NULL,
-                topics TEXT NOT NULL,
-                questions TEXT NOT NULL,
-                correct_answers TEXT NOT NULL,
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-            """)
-            connection.commit()
-            print("Table 'generated_question_files' created successfully.")
-        else:
-            print("Table 'generated_question_files' already exists.")
-
-        cursor.close()
-    except Error as e:
-        print(f"Error ensuring table exists: {e}")
+   try:
+       cursor = connection.cursor()
+       # Check if the table exists
+       cursor.execute("SHOW TABLES LIKE 'generated_question_files'")
+       result = cursor.fetchone()
+       if not result:
+           # Table doesn't exist, so create it
+           cursor.execute("""
+               CREATE TABLE generated_question_files (
+                   id INT AUTO_INCREMENT PRIMARY KEY,
+                   technology VARCHAR(255) NOT NULL,
+                   topics TEXT NOT NULL, 
+                   questions TEXT NOT NULL,
+                   correct_answers TEXT NOT NULL,
+                   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+               )
+           """)
+           connection.commit()
+           print("Table 'generated_question_files' created successfully.")
+       else:
+           print("Table 'generated_question_files' already exists.")
+       cursor.close()
+   except Error as e:
+       print(f"Error ensuring table exists: {e}")
 
 def review_feedback():
     # Simulated feedback data. Replace this with real data from your database or source.
