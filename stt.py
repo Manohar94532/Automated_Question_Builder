@@ -398,7 +398,7 @@ def save_question_bank(technology, topics, questions, difficulty, correct_answer
       cursor = connection.cursor()  
       query = """  
       INSERT INTO question_banks (technology, topics, questions, difficulty, correct_answers)  
-      VALUES (%s, %s, %s, %s, %s)  
+      VALUES (%s, %s, %s, %s, %s) 
       """  
       cursor.execute(query, (technology, ','.join(topics), questions, difficulty, correct_answers))  
       connection.commit()  
