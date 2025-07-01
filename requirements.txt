@@ -9,7 +9,6 @@ werkzeug
 pandas
 scikit-learn
 nltk
-smtplib
 fpdf
 python-pptx
 plotly
