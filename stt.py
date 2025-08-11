@@ -1,6 +1,3 @@
-Mongodb
-
-
 import streamlit as st
 import streamlit_chat as stc  
 import google.generativeai as genai
